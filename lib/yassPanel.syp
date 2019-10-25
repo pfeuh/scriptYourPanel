@@ -1,0 +1,14 @@
+def addYassPanel(sketch, _x, _y):
+    HOLE_RADIUS = 1.6
+    HOLE_OFFSET_X = 7.82
+    HOLE_OFFSET_Y = 9.09
+    WIDTH = 198.0
+    HEIGHT = 132.0
+    CORNER_RADIUS = 10.0
+
+    sketch.addRectangle(_x, _y, WIDTH, HEIGHT, CORNER_RADIUS)
+    for hole_num, (a,b) in enumerate(((1.0, 1.0), (1.0, -1.0), (-1.0, -1.0), (-1.0, 1.0), )):
+        x = a * (WIDTH / 2.0 - HOLE_OFFSET_X)  
+        y = b * (HEIGHT / 2.0 - HOLE_OFFSET_Y)  
+        sketch.addCircle(x,y, HOLE_RADIUS)
+

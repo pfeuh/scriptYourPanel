@@ -1,0 +1,3 @@
+
+def addDisplay7x4Segments(sketch, _x, _y):
+    sketch.addRectangle(5.08, 38.608, 40.3098, 13.97, 0)

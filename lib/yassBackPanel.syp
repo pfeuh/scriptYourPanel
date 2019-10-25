@@ -1,0 +1,5 @@
+def addYassBackPanel(sketch, _x, _y):
+    WIDTH = 216
+    HEIGHT = 64
+    sketch.addRectangle(_x, _y, WIDTH, HEIGHT, 0)
+

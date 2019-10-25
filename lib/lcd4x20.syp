@@ -1,0 +1,18 @@
+def addLcd4x20(sketch, _x, _y):
+    HOLE_RADIUS = 1.6
+    LCD_4x20_WIDTH = 97.2
+    LCD_4x20_HEIGHT = 40.0
+    LDC_4x20_HOLE_X_INTERVAL = 93.0
+    LDC_4x20_HOLE_Y_INTERVAL = 55.0
+    LCD_4x20_CONNECTOR_WIDTH = 40.65
+    LCD_4x20_CONNECTOR_HEIGHT = 2.54 * 1.5
+    LCD_SCREEN_WIDTH = 76.22
+    LCD_SCREEN_HEIGHT = 25.41
+
+    sketch.addRectangle(_x, _y, LCD_4x20_WIDTH, LCD_4x20_HEIGHT, 0)
+    sketch.addRectangle(_x, _y, LCD_SCREEN_WIDTH, LCD_SCREEN_HEIGHT, 2.0)
+    x = LDC_4x20_HOLE_X_INTERVAL / 2.0
+    y = LDC_4x20_HOLE_Y_INTERVAL / 2.0
+    for hole_num, (a,b) in enumerate(((-x, y), (-x, -y), (x, y), (x, -y), )):
+        sketch.addCircle(_x + a,_y + b, HOLE_RADIUS)
+

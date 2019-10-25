@@ -1,0 +1,32 @@
+
+def addYassBackStuff(sketch, _x, _y):
+    def addLegend(sketch, x, y, text="", **kwds):
+        sketch.addText(text, x, y + TEXT_OFFSET, anchor="middle", font_size=LEGEND_FONT_SIZE, **kwds)
+
+    COEFF_IN_MM = 24.5
+    BACK_PANNEL_WIDTH = 216
+    BACK_PANNEL_HEIGHT = 64
+    DIN5_RADIUS = 7.55
+    SCREW_RADIUS = 1.55
+    TEXT_OFFSET = 10
+    DRAW_CROSS = False
+    LEGEND_FONT_SIZE = 2.0
+    ON_OFF_RADIUS = 6.3
+    DIN_OUT_X = 2.45 * COEFF_IN_MM
+    DIN_IN_X = DIN_OUT_X - 1.20 * COEFF_IN_MM
+    CROSS_RADIUS = DIN5_RADIUS * 2.0
+    
+    y = -BACK_PANNEL_HEIGHT / 4.0
+    sketch.addComponent("din5", DIN_OUT_X, y)
+    addLegend(sketch, DIN_OUT_X, y, text="OUT")
+    
+    sketch.addComponent("din5", DIN_IN_X, y)
+    addLegend(sketch, DIN_IN_X, y, text="IN")
+    
+    x = -1.9 * COEFF_IN_MM
+    sketch.addCircle(x, y, ON_OFF_RADIUS)
+    addLegend(sketch, x + 3.0, y+ 12.0, text="ON/OFF", transform="-90")
+    
+    x = -(1.9 + 0.7) * COEFF_IN_MM
+    sketch.addCircle(x, y, ON_OFF_RADIUS)
+    addLegend(sketch, x + 3.0, y+ 12.0, text="POWER", transform="-90")

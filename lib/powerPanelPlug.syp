@@ -1,0 +1,4 @@
+def addPowerPanelPlug(sketch, x, y):
+    sketch.addCircle(x, y, 6.25)
+
+

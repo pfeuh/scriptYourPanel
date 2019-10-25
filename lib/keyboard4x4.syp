@@ -1,0 +1,25 @@
+def addKeyboard4x4(sketch, _x, _y):
+    HOLE_RADIUS = 1.6
+    KEY_WIDTH = 14.1
+    KEYBOARD_WIDTH = 64.35
+    KEYBOARD_HOLE_X_INTERVAL = 76.2
+    KEYBOARD_HOLE_Y_INTERVAL = 51.0
+    KEYBOARD_CONNECTOR_WIDTH = 40.0
+    KEYBOARD_CONNECTOR_HEIGHT = 6.0
+    matter_witdh = KEY_WIDTH * 4.0
+    void_width = KEYBOARD_WIDTH - matter_witdh
+    step_size = KEY_WIDTH + void_width / 3.0
+    x_origin = _x - KEYBOARD_WIDTH / 2.0 + 0.5 * step_size - void_width / 6.0
+    y_origin = _y - KEYBOARD_WIDTH / 2.0 + 0.5 * step_size - void_width / 6.0
+    
+    for col in range(4):
+        for row in range(4):
+            x = x_origin + step_size * float(col)
+            y = y_origin + step_size * float(row)
+            sketch.addRectangle(x, y, KEY_WIDTH, KEY_WIDTH, 0)
+
+    x = KEYBOARD_HOLE_X_INTERVAL / 2.0
+    y = KEYBOARD_HOLE_Y_INTERVAL / 2.0
+    for hole_num, (a,b) in enumerate(((-x, y), (-x, -y), (x, y), (x, -y), )):
+        sketch.addCircle(_x + a,_y + b, HOLE_RADIUS)
+

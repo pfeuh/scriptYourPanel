@@ -1,0 +1,4 @@
+def addEncoder(sketch, _x, _y):
+    ENCODER_RADIUS = 6.85 / 2.0
+    sketch.addCircle(_x, _y, ENCODER_RADIUS)
+
