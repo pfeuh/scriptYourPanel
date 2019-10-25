@@ -24,7 +24,3 @@ in scripting or using library objects.
 The main problem for me was to create texts in 4 directions with
 the 3 anchors start, middle & end. It's now fixed.
 
-As leds and buttons of front pannel I want to lasercut are on a pcb,
-I had to design this pcb in inches, that's why this library works
-not so bad in inches.
-
