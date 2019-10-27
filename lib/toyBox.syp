@@ -4,8 +4,8 @@
 
 def addToyBox(sketch, _x, _y):
     HOLE_RADIUS = 1.55
-    WIDTH = 155.0
-    HEIGHT = 105.0
+    WIDTH = 154.5
+    HEIGHT = 104.5
     HOLE_OFFSET = 5.0
 
     sketch.addRectangle(_x, _y, WIDTH, HEIGHT, 0)
