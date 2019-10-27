@@ -13,4 +13,6 @@ def addToyBox(sketch, _x, _y):
         x = a * (WIDTH / 2.0 - HOLE_OFFSET)  
         y = b * (HEIGHT / 2.0 - HOLE_OFFSET)  
         sketch.addCircle(x,y, HOLE_RADIUS)
+    sketch.addCircle(_x, _y + HEIGHT / 2.0 - HOLE_OFFSET, HOLE_RADIUS)
+    sketch.addCircle(_x, _y - HEIGHT / 2.0 + HOLE_OFFSET, HOLE_RADIUS)
 
