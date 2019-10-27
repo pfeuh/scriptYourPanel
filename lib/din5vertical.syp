@@ -1,0 +1,8 @@
+def addDin5vertical(sketch, x, y):
+    DIN5_RADIUS = 7.55
+    HOLE_RADIUS = 1.6
+    sketch.addCircle(x, y, DIN5_RADIUS)
+    sketch.addCircle(x - 11.25, y, HOLE_RADIUS)
+    sketch.addCircle(x + 11.25, y, HOLE_RADIUS)
+
+
