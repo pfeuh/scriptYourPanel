@@ -1,0 +1,6 @@
+
+def addArduinoNanoHolder(sketch, _x, _y):
+    HOLE_RADIUS = 1.55
+    WIDTH = 44.5
+    sketch.addCircle(_x + WIDTH / 2.0, _y, HOLE_RADIUS)
+    sketch.addCircle(_x - WIDTH / 2.0, _y, HOLE_RADIUS)

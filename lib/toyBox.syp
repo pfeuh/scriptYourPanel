@@ -1,11 +1,11 @@
 
-# Boite Tidy Smart de chez Centrakor
-# Organiseur tiroir 15 x 23 x 7 (cm) 
+# Boite a jouet Cash Converter
+# 155 x 105 x 33 (interieur) 
 
-def addCentrakorPanel(sketch, _x, _y):
-    HOLE_RADIUS = 1.6
-    WIDTH = 215.0
-    HEIGHT = 135.0
+def addToyBox(sketch, _x, _y):
+    HOLE_RADIUS = 1.55
+    WIDTH = 155.0
+    HEIGHT = 105.0
     HOLE_OFFSET = 5.0
 
     sketch.addRectangle(_x, _y, WIDTH, HEIGHT, 0)

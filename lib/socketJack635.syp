@@ -1,0 +1,4 @@
+def addSocketJack635(sketch, _x, _y):
+    JACK_RADIUS = 8.9 / 2.0
+    sketch.addCircle(_x, _y, JACK_RADIUS)
+

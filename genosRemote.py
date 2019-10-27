@@ -33,26 +33,27 @@ sketch = scriptYourPanel.SKETCH(filename, "mm")
 # I don't know why drawing it out of the sheet, but I can fix it
 sketch.changeOrigin(152.0, -190.0)
 
-#~ sketch.addComponent("keyboard4x4", 0, 0)
-#~ sketch.addComponent("lcd4x20", 100, 0)
-#~ sketch.addComponent("encoder", 0, 50)
-#~ sketch.addComponent("centrakorPanel", 0, 0)
-#~ sketch.addComponent("tekoPanel", 0, 0)
-#~ sketch.addComponent("yassPanel", 0, 0)
-#~ sketch.addComponent("onOffPanelPlug", -100, 0)
-#~ sketch.addComponent("powerPanelPlug", -100, 30)
-#~ for x in range(3):
-    #~ sketch.addComponent("din5", x * 30 + 25, 50)
-#~ sketch.addComponent("verticalJoystick", -140, 0)
-#~ sketch.addComponent("horizontalJoystick", -100, 100)
-#~ for x in range(8):
-    #~ sketch.addComponent("miniJackPanel", -70 + x * 10, -50)
-#~ sketch.addComponent("interrupteurBascule", -50, 0)
+sketch.addComponent("toyBox", 0, 0)
+for jack_num in range(4):
+    x = -52.5 + jack_num * 35.0
+    y = 35.0
+    sketch.addComponent("socketJack635", x, y)
+    text = ["BLUE", "WHITE", "RED", "LESLIE"][jack_num]
+    sketch.addText(text, x, y + 10.0, anchor="middle")
 
-sketch.addComponent("tekoPanel", 0, 0)
-sketch.addComponent("centrakorPanel", 0, 0)
-sketch.addComponent("yassPanel", 0, 0)
-sketch.addComponent("yassStuff", 0, 0)
+for obj_num in range(4):
+    x = -52.5 + obj_num * 35.0
+    y = -35.0
+    component = ["socketJack635", "socketJack635", "din5", "powerPanelPlug"][obj_num]
+    sketch.addComponent(component, x, y)
+    text = ["SUSTAIN", "AUX", "MIDI OUT", "POWER"][obj_num]
+    sketch.addText(text, x, y - 13.5, anchor="middle")
+
+sketch.addComponent("arduinoNanoHolder", 45.0, 0.0)
+sketch.addComponent("relayHolder", -45.0, 0.0)
+sketch.addText("GENOS", 0.0, +10.0, anchor="middle", font_size=2.0)
+sketch.addText("REMOTE", 0.0, -10.0, anchor="middle", font_size=2.0)
+
+
 
 sketch.save()
-#~ sketch.getWin().mainloop()

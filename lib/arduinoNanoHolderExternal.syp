@@ -1,0 +1,15 @@
+
+def addArduinoNanoHolder(sketch, _x, _y):
+    HOLE_RADIUS = 1.0
+    WIDTH = 50.57
+    HEIGHT = 30.70
+    HOLE_OFFSET = 5.0
+
+    sketch.addRectangle(_x, _y, WIDTH, HEIGHT, 0)
+    step = 49.5 / 14.0
+    x = _x - (step * 7)
+    for hole_num in range(15):
+        for y in [44.0 / 2.0, - 44.0 / 2.0]:
+            sketch.addCircle(x,y, HOLE_RADIUS)
+        x += step
+

@@ -1,0 +1,11 @@
+
+def addRelayHolder(sketch, _x, _y):
+    HOLE_RADIUS = 1.55
+    WIDTH = 45.71
+    HEIGHT = 34.33
+    
+    for x, y in[(_x -WIDTH / 2.0, _y -  HEIGHT / 2/ 2.0),
+                (_x -WIDTH / 2.0, _y +  HEIGHT / 2/ 2.0),
+                (_x +WIDTH / 2.0, _y +  HEIGHT / 2/ 2.0),
+                (_x +WIDTH / 2.0, _y -  HEIGHT / 2/ 2.0)]:
+        sketch.addCircle(x, y, HOLE_RADIUS)
