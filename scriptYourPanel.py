@@ -179,7 +179,7 @@ class SKETCH():
                 code = code.replace("#RY#", str(object[4]))
                 objects_code += code
             elif key.startswith("line"):
-                code = LINE[:]
+                code = self.__getBinObject(LINE)
                 code = code.replace("#ID#", key)
                 code = code.replace("#X#", str(object[0]))
                 code = code.replace("#Y#", str(object[1]))
