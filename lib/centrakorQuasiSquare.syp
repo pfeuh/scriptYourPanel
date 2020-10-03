@@ -1,0 +1,16 @@
+
+# Boite Tidy Smart de chez Centrakor
+# Organiseur tiroir 15 x 23 x 7 (cm) 
+
+def addCentrakorQuasiSquare(sketch, _x, _y):
+    HOLE_RADIUS = 1.6
+    WIDTH = 137.0
+    HEIGHT = 135.5
+    HOLE_OFFSET = 5.0
+
+    sketch.addRectangle(_x, _y, WIDTH, HEIGHT, 0)
+    for hole_num, (a,b) in enumerate(((1.0, 1.0), (1.0, -1.0), (-1.0, -1.0), (-1.0, 1.0), )):
+        x = _x + a * (WIDTH / 2.0 - HOLE_OFFSET)  
+        y = _y + b * (HEIGHT / 2.0 - HOLE_OFFSET)  
+        sketch.addCircle(x,y, HOLE_RADIUS)
+
