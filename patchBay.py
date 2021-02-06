@@ -45,57 +45,44 @@ x = -HOLES_H_WIDTH / 2.0
 y = 20.6 / 2.0
 
 LABELS = [
-    ["L", "D3200"], # 0
-    ["R", ""], # 1
-    ["L", "ZOOM R16"], # 2
-    ["R", "" ], # 3
-    ["L", "COMPUTER"], # 4
-    ["R", ""], # 5
-    ["OUT", "MS-20"], # 6
-    ["OUT", "MLOG"], # 7
-    ["OUT", "LAMB"], # 8
-    ["L", "GENOS-IN"], # 9
-    ["R", ""], # 10
-    ["L", "GENOS-OUT"], # 11
-    ["R", ""] ,# 12
-    ["1", ""], # 13
-    ["2", "----- GENOS AUX ----"], # 14
-    ["3", ""], # 15
-    ["4", ""], # 16
-    ["L", ""], # 17
-    ["R", ""], # 18
-    ["1", "------------------- MPC -------------------"], # 19
-    ["2", ""], # 20
-    ["3",""], # 21
-    ["4", ""], # 22
-    ["", ""], # 23
+    ["MINILOGUE", "left", "[OUT"], # 0
+    ["", "middle", "SUST]"],
+    ["LAMBDA", "left", "[HI"], # 0
+    ["", "middle", "LO"],
+    ["", "middle", "MIX"],
+    ["", "middle", "SUST]"],
+    ["POLY-800", "left", "[HI"],
+    ["", "middle", "LO"],
+    ["", "middle", "SUST]]"],
+    ["MS-20", "middle", "OUT"],
+    ["BOOG", "middle", "OUT"],
+    ["SLIM", "middle", "OUT"],
+    ["MOD", "middle", "OUT"],
+    ["REVERB", "left", "[IN"],
+    ["", "middle", "OUT]"],
+    ["DELAY", "left", "[IN"],
+    ["", "middle", "OUT]"],
+    ["CHORUS", "left", "[IN"],
+    ["", "middle", "OUTL"],
+    ["", "middle", "OUTR]"],
+    ["", "middle", ""],
+    ["", "middle", ""],
+    ["", "middle", ""],
+    ["", "middle", ""],
     ]
 
 sketch.addRectangle(0.0, 0.0, WIDTH, HEIGHT, 0.0)
 
-for column_num in range(int(NB_HOLES)):
+for column_num in range(len(LABELS)):
     sketch.addCircle(x, y, HOLE_RADIUS)
     sketch.addCircle(x, -y, HOLE_RADIUS)
     x_text = x
-    sketch.addText(LABELS[column_num][0], x_text, -2.0 + HOLE_STEP, anchor = "middle")
-    #~ x_text = x
+    sketch.addText(LABELS[column_num][0], x_text, -2.0 + HOLE_STEP, anchor=LABELS[column_num][1])
     anchor = "middle"
-    
-    # let's customize a bit
-    if column_num in(0, 2, 4, 9, 11, 14, 19):
-        # text is center between the hole and the next hole
-        x_text += 0.5 * HOLE_STEP
-    #~ if column_num in(0,8, 12):
-        #~ anchor = "start"
-    #~ elif column_num in(7,11, 14):
-        #~ anchor = "end"
-        
-    sketch.addText(LABELS[column_num][1], x_text, -2.0, anchor = anchor)
-
+    sketch.addText(LABELS[column_num][2], x_text, -2.0, anchor=anchor)
     x += HOLE_STEP
 
 sketch.save()
-#~ sketch.getWin().mainloop()
 
 
 
