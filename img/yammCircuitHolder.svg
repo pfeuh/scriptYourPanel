@@ -90,28 +90,49 @@ cx="175.5"
 cy="129.5"
 rx="1.6"
 ry="1.6" />
+<rect
+style="fill:none;stroke:#ff0000;stroke-width:0.2;stroke-opacity:1"
+id="rect2"
+width="44.0"
+height="9.0"
+x="127.0"
+y="127.0"
+rx="0.0"
+ry="0.0" />
 <text
 xml:space="preserve"
 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.0mm;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
 x="129.0"
-y="157.0"
+y="155.0"
 
 id="text1"><tspan
  sodipodi:role="line"
  id="tspan771"
  x="129.0"
- y="157.0"
+ y="155.0"
  style="stroke-width:0.26458332px">Yamm Pocket's circuit holder</tspan></text>
 <text
 xml:space="preserve"
 style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.0mm;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
 x="129.0"
-y="132.0"
+y="159.0"
 
 id="text2"><tspan
  sodipodi:role="line"
  id="tspan771"
  x="129.0"
+ y="159.0"
+ style="stroke-width:0.26458332px">2021/06/08, 18:45:26</tspan></text>
+<text
+xml:space="preserve"
+style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:1.0mm;line-height:125%;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+x="101.75"
+y="132.0"
+
+id="text3"><tspan
+ sodipodi:role="line"
+ id="tspan771"
+ x="101.75"
  y="132.0"
  style="stroke-width:0.26458332px">TOP</tspan></text>
 <text
@@ -120,7 +141,7 @@ style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:nor
 x="129.0"
 y="182.0"
 
-id="text3"><tspan
+id="text4"><tspan
  sodipodi:role="line"
  id="tspan771"
  x="129.0"

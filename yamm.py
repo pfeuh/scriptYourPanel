@@ -129,5 +129,7 @@ for index, left_side_offset in enumerate((0.0, width + 3.0)):
         if item_width != 0.0:
             sketch.addRectangle(x + temp_offset + left_side_offset, depth / 4.0, item_width, depth / 2.0)
 
+sketch.addText(scriptYourPanel.getTimestamp(), 0.0, -18.0, anchor = "middle", font_size = 0.8)
+
 sketch.save()
 

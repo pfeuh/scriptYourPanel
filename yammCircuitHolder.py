@@ -27,17 +27,18 @@ LCD_SCREEN_WIDTH = 76.22
 LCD_SCREEN_HEIGHT = 25.41
 
 # display 4 lines of 20 characters
-#~ sketch.addComponent("lcd4x20", 0.0, 0.0)
-
 sketch.addRectangle(-5.5, 0.0, 109.0, 60.0)
-
 sketch.addCircle(- LDC_4x20_HOLE_X_INTERVAL / 2, - LDC_4x20_HOLE_Y_INTERVAL / 2, HOLE_RADIUS)
 sketch.addCircle(+ LDC_4x20_HOLE_X_INTERVAL / 2, - LDC_4x20_HOLE_Y_INTERVAL / 2, HOLE_RADIUS)
 sketch.addCircle(- LDC_4x20_HOLE_X_INTERVAL / 2, + LDC_4x20_HOLE_Y_INTERVAL / 2, HOLE_RADIUS)
 sketch.addCircle(+ LDC_4x20_HOLE_X_INTERVAL / 2, + LDC_4x20_HOLE_Y_INTERVAL / 2, HOLE_RADIUS)
 
-sketch.addText("Yamm Pocket's circuit holder", 0.0, 0.0, anchor = "middle", font_size = 1.0)
-sketch.addText("TOP", 0.0, 25.0, anchor = "middle", font_size = 1.0)
+# reserved area for i2c -> parallel bridge
+sketch.addRectangle(20.0, 25.5, 44.0, 9.0)
+
+sketch.addText("Yamm Pocket's circuit holder", 0.0, 2.0, anchor = "middle", font_size = 1.0)
+sketch.addText(scriptYourPanel.getTimestamp(), 0.0, -2.0, anchor = "middle", font_size = 1.0)
+sketch.addText("TOP", -109.0 / 4.0, 25.0, anchor = "middle", font_size = 1.0)
 sketch.addText("BOTTOM", 0.0, - 25.0, anchor = "middle", font_size = 1.0)
 
 sketch.addComponent("yammHolesV1", -5.5, 0.0)

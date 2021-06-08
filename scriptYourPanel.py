@@ -21,6 +21,7 @@
 # 
 
 import sys
+from datetime import datetime
 
 sys.stdout.write(sys.version + "\n")
 sys.stdout.write("scriptYourPanel v. 1.00\n")
@@ -34,6 +35,9 @@ ELLIPSE = "ellipse"
 #~ COEFF = 1.0
 
 # text--align : start middle end
+
+def getTimestamp():
+    return datetime.now().strftime("%Y/%m/%d, %H:%M:%S")
 
 class SKETCH():
     RECTANGLE_ID = 1
