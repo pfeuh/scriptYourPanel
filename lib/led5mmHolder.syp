@@ -1,0 +1,7 @@
+
+# Boite Tidy Smart de chez Centrakor
+# Organiseur tiroir 15 x 23 x 7 (cm) 
+
+def addLed5mmHolder(sketch, _x, _y):
+    sketch.addCircle(_x, _y, 7.8 / 2.0)
+

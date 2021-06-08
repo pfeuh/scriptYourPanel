@@ -45,30 +45,30 @@ x = -HOLES_H_WIDTH / 2.0
 y = 20.6 / 2.0
 
 LABELS = [
-    ["MINILOGUE", "left", "[OUT"], # 0
-    ["", "middle", "SUST]"],
-    ["LAMBDA", "left", "[HI"], # 0
-    ["", "middle", "LO"],
+    ["MOJO", "middleRight", "[L"],
+    ["", "middle", "R]"],
+    ["MLOG", "middle", "OUT"],
+    ["P800", "middle", "OUT"],
+    ["", "left", "[HI"],
+    ["LAMBDA", "middleRight", "LO"],
     ["", "middle", "MIX"],
     ["", "middle", "SUST]"],
-    ["POLY-800", "left", "[HI"],
-    ["", "middle", "LO"],
-    ["", "middle", "SUST]]"],
-    ["MS-20", "middle", "OUT"],
-    ["BOOG", "middle", "OUT"],
+    ["", "middle", "9"],
+    ["", "middle", "10"],
+    ["", "middle", "11"],
+    ["", "middle", "12"],
+    ["", "middle", "13"],
+    ["", "middle", "14"],
+    ["", "middle", "15"],
+    ["", "middle", "16"],
+    ["", "middle", "17"],
+    ["", "middle", "18"],
+    ["", "middle", "19"],
+    ["MS20", "middle", "OUT"],
     ["SLIM", "middle", "OUT"],
+    ["M500", "middle", "OUT"],
     ["MOD", "middle", "OUT"],
-    ["REVERB", "left", "[IN"],
-    ["", "middle", "OUT]"],
-    ["DELAY", "left", "[IN"],
-    ["", "middle", "OUT]"],
-    ["CHORUS", "left", "[IN"],
-    ["", "middle", "OUTL"],
-    ["", "middle", "OUTR]"],
-    ["", "middle", ""],
-    ["", "middle", ""],
-    ["", "middle", ""],
-    ["", "middle", ""],
+    ["BOOG", "middle", "OUT"],
     ]
 
 sketch.addRectangle(0.0, 0.0, WIDTH, HEIGHT, 0.0)
@@ -77,7 +77,12 @@ for column_num in range(len(LABELS)):
     sketch.addCircle(x, y, HOLE_RADIUS)
     sketch.addCircle(x, -y, HOLE_RADIUS)
     x_text = x
-    sketch.addText(LABELS[column_num][0], x_text, -2.0 + HOLE_STEP, anchor=LABELS[column_num][1])
+    x_text2 = x_text
+    anchor = LABELS[column_num][1]
+    if anchor == "middleRight":
+        anchor = "middle"
+        x_text2 += HOLE_STEP / 2.0
+    sketch.addText(LABELS[column_num][0], x_text2, -2.0 + HOLE_STEP, anchor=anchor)
     anchor = "middle"
     sketch.addText(LABELS[column_num][2], x_text, -2.0, anchor=anchor)
     x += HOLE_STEP

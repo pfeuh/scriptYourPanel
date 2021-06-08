@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 # 
-# file : scriptSvg.py
+# file : scriptYourPanelABsolute.py
 # Copyright (c) pfeuh <ze.pfeuh@gmail>
 # All rights reserved.
 # 
@@ -23,17 +23,14 @@
 import sys
 
 sys.stdout.write(sys.version + "\n")
-sys.stdout.write("scriptYourPanel v. 1.00\n")
+sys.stdout.write("scriptYourPanelAbsolute v. 1.00\n")
 
+DEBUG = "-d" in sys.argv
 TEMPLATE = "template"
 RECTANGLE = "rectangle"
 LINE = "line"
 TEXT = "text"
 ELLIPSE = "ellipse"
-
-#~ COEFF = 1.0
-
-# text--align : start middle end
 
 class SKETCH():
     RECTANGLE_ID = 1
@@ -84,18 +81,19 @@ class SKETCH():
         y += self.__y_origin
         return x, y
 
-    def addRectangle(self, x, y, w, h, radius=0, label=None):
+    def addRectangle(self, x1, y1, x2, y2, radius=0.0, label=None):
         key = "rect%u"%SKETCH.RECTANGLE_ID
         SKETCH.RECTANGLE_ID += 1
         if label == None:
             label = key
-        self.__raw_xy[label] = float(x), float(y)
-        x, y, w, h, radius = self.cvrt(x), self.cvrt(y), self.cvrt(w), self.cvrt(h), self.cvrt(radius)
-        x = x - w / 2.0 
-        y = 0.0 - y - h / 2.0 
-        x += self.__x_origin
-        y += self.__y_origin
-        self.__objects[key] = [x, y, w, h, radius]
+        self.__raw_xy[label] = float(x1), float(y1)
+        #~ x, y, w, h, radius = self.cvrt(x), self.cvrt(y), self.cvrt(w), self.cvrt(h), self.cvrt(radius)
+        #~ x = x - w / 2.0 
+        #~ y = 0.0 - y - h / 2.0 
+        #~ x += self.__x_origin
+        #~ y += self.__y_origin
+        #~ self.__objects[key] = [x, y, w, h, radius]
+        self.__objects[key] = [x1, y1, x2, y2, radius]
         
         #~ self.__canvas.create_rectangle(x * COEFF, y * COEFF, w * COEFF, h * COEFF, outline="black")
 
@@ -107,12 +105,13 @@ class SKETCH():
         if label == None:
             label = key
         self.__raw_xy[label] = float(x1), float(y1)
-        x1, y1, x2, y2 = self.cvrt(x1), self.cvrt(y1), self.cvrt(x2), self.cvrt(y2)
-        x1 += self.__x_origin
-        y1 += self.__y_origin
-        x2 += self.__x_origin
-        y2 += self.__y_origin - y2
+        #~ x1, y1, x2, y2 = self.cvrt(x1), self.cvrt(y1), self.cvrt(x2), self.cvrt(y2)
+        #~ x1 += self.__x_origin
+        #~ y1 += self.__y_origin
+        #~ x2 += self.__x_origin
+        #~ y2 += self.__y_origin - y2
         self.__objects[key] = [x1, y1, x2-x1, y2-y1]
+        #~ self.__objects[key] = [x1, y1, x2, y2]
         return key
 
     def addCircle(self, x, y, r, label=None):
@@ -214,7 +213,7 @@ if __name__ == "__main__":
     # I don't know why drawing it out of the sheet, but I can fix it
     sketch.changeOrigin(6, -7.5)
 
-    # let's compute front pannel border
+    # let's compute front panel border
     sketch.addRectangle(0, 0, 7.8, 5.2, 0.15)
 
     y = 1.0

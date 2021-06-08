@@ -1,0 +1,12 @@
+def addYammV1(sketch, _x, _y):
+    HOLE_RADIUS = 1.6
+    WIDTH = 109.22
+    HEIGHT = 38.100
+    HOLE_X_INTERVAL = 93.0
+    HOLE_Y_INTERVAL = 55.0
+
+    sketch.addRectangle(_x, _y, WIDTH, HEIGHT, 0)
+    
+    sketch.addCircle(_x + 4.45, _y - 13.9, HOLE_RADIUS)
+    sketch.addCircle(_x -44.45, _y + 15.876, HOLE_RADIUS)
+
